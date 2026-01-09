@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <math.h>  // untuk fungsi fabs
 
 // Fungsi aktivasi step (binary)
 int step_activation(float x) {
@@ -79,8 +80,10 @@ int main() {
         int output = step_activation(net_input);
         printf("Input: [%.0f, %.0f] -> Output: %d (Target: %d) %s\n",
                input[i][0], input[i][1], output, target[i],
-               output == target[i] ? "?" : "?");
+               output == target[i] ? "(Benar)" : "(Salah)");
     }
 
+    printf("\nTekan Enter untuk keluar...");
+    getchar(); // Menunggu input sebelum program selesai
     return 0;
 }
